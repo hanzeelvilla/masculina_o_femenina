@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    padding-bottom: 20px;
+}
+
+.container{
+    margin: 4rem auto;
+}
+
+.myBtn{
+    width: 150px;
+}
+
+.divPreguntas{
+   background-color: #8CB9BD;
+   width: 20rem;
+   padding: 30px;
+   border-radius: 30px;
+}
+
+.divPreguntas button{
+    margin: 0 10px;
+}
