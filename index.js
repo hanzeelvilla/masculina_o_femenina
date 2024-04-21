@@ -16,28 +16,75 @@ const words = {
         "bonheur",
         "front",
         "fruit",
-        "bijou"
+        "bijou",
+        "lait",
+        "matin",
+        "miel",
+        "regard",
+        "sac à dos",
+        "nez",
+        "mot",
+        "arrêt",
+        "mur",
+        "couple",
+        "bracelet",
+        "sel",
+        "sang",
+        "signe",
+        "serpent",
+        "sigle",
+        "sourire",
+        "légume"
     ],
     "feminin": [
-        "analyse",
-        "annonce",
-        "armoire",
-        "attaque",
-        "augmentation",
+        "une analyse",
+        "une annonce",
+        "une armoire",
+        "une attaque",
+        "une augmentation",
         "forêt",
-        "chaussette",
-        "chaleur",
-        "affiche",
-        "comète",
-        "jalousie",
-        "voiture",
-        "fusée",
-        "couleur",
-        "dent",
-        "douleur",
-        "équipe",
-        "asperge",
-        "étude"
+        "une chaussette",
+        "une chaleur",
+        "une affiche",
+        "une comète",
+        "la jalousie",
+        "une voiture",
+        "une fusée",
+        "une couleur",
+        "une dent",
+        "une douleur",
+        "une équipe",
+        "une asperge",
+        "une étude",
+        "une fin",
+        "la faim",
+        "une épaule",
+        "une lèvre",
+        "une limite",
+        "une nappe",
+        "une carte",
+        "une mer",
+        "une pêche",
+        "une méthode",
+        "une peur",
+        "une minute",
+        "la cuisse",
+        "une haine",
+        "une odeur",
+        "une origine",
+        "une paire",
+        "une commande",
+        "une peluche",
+        "une permission",
+        "une planète",
+        "une assiette",
+        "une montre",
+        "une seconde",
+        "la sueur",
+        "une fourchette",
+        "une robe",
+        "une vidéo",
+        "une chaussure"
     ]
 }
 
@@ -82,41 +129,47 @@ const btnMale = document.getElementById("btnMale")
 const btnFemale = document.getElementById("btnFemale")
 
 btnMale.addEventListener("click", () => {
-    const pRes = document.getElementById("pRes")
-    pRes.classList.remove("right", "wrong")
-    if (check_ans("masculin")) {
+    if (numQuestion < questions) {
+        const pRes = document.getElementById("pRes")
+        pRes.classList.remove("right", "wrong")
+
+        if (check_ans("masculin")) {
         pRes.classList.add("right")
         pRes.innerHTML = "Correct"
-    }
-    else {
-        const lWrongAns = document.getElementById("lWrongAns")
-        lWrongAns.innerHTML += `<li>${word_display}</li>`
-        pRes.classList.add("wrong")
-        pRes.innerHTML = "Incorrect"
-    }
-    update_num_question()
-    word_display = random_word()
+        }
+        else {
+            const lWrongAns = document.getElementById("lWrongAns")
+            lWrongAns.innerHTML += `<li>${word_display}</li>`
+            pRes.classList.add("wrong")
+            pRes.innerHTML = "Incorrect"
+        }
+        update_num_question()
+        word_display = random_word()
 
-    const word = document.getElementById("word")
-    word.innerHTML = word_display
+        const word = document.getElementById("word")
+        word.innerHTML = word_display
+    }
+
 })
 
 btnFemale.addEventListener("click", () => {
-    const pRes = document.getElementById("pRes")
-    pRes.classList.remove("right", "wrong")
-    if (check_ans("feminin")) {
-        pRes.classList.add("right")
-        pRes.innerHTML = "Correct"
-    }
-    else {
-        const lWrongAns = document.getElementById("lWrongAns")
-        lWrongAns.innerHTML += `<li>${word_display}</li>`
-        pRes.classList.add("wrong")
-        pRes.innerHTML = "Incorrect"
-    }
-    update_num_question()
-    word_display = random_word()
+    if (numQuestion < questions) {
+       const pRes = document.getElementById("pRes")
+        pRes.classList.remove("right", "wrong")
+        if (check_ans("feminin")) {
+            pRes.classList.add("right")
+            pRes.innerHTML = "Correct"
+        }
+        else {
+            const lWrongAns = document.getElementById("lWrongAns")
+            lWrongAns.innerHTML += `<li>${word_display}</li>`
+            pRes.classList.add("wrong")
+            pRes.innerHTML = "Incorrect"
+        }
+        update_num_question()
+        word_display = random_word()
 
-    const word = document.getElementById("word")
-    word.innerHTML = word_display
+        const word = document.getElementById("word")
+        word.innerHTML = word_display 
+    }
 })
